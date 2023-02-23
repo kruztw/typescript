@@ -1,0 +1,4 @@
+type Query {
+  users: String
+  # 當 query 的 field 是 users 時，Apollo 回傳的response data 型別為 string
+}
