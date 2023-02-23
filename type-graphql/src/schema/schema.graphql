@@ -1,4 +1,26 @@
 type Query {
-  users: String
-  # 當 query 的 field 是 users 時，Apollo 回傳的response data 型別為 string
+  users: [User]
+  user(userInput: UserConfig): User
+}
+
+type Mutation {
+  createUser(userInput: UserInput): User
+  updateUser(userInput: UserInput): User
+  deleteUser(userConfig: UserConfig): User
+}
+
+type User {
+  id: Int
+  name: String
+  age: Int
+}
+
+input UserInput {
+  id: Int
+  name: String
+  age: Int
+}
+
+input UserConfig {
+  id: Int
 }
